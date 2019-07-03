@@ -64,6 +64,7 @@ module.exports = ({ types: t }) => ({
         const expr = expressions[i] ? generateExpressionPlaceholder(i) : ''
         return `${acc}${raw}${expr}`
       }, '')
+      css = `{${css}}`
 
       // const processed = postcss(plugins).process(css, options).css
       const { plugins, options } = deasyncPromise(postcssrc())
